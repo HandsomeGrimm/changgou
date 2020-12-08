@@ -25,8 +25,6 @@ public class Template implements Serializable{
     @Column(name = "para_num")
 	private Integer paraNum;//参数数量
 
-
-
 	//get方法
 	public Integer getId() {
 		return id;
@@ -64,5 +62,13 @@ public class Template implements Serializable{
 		this.paraNum = paraNum;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Template{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", specNum=" + specNum +
+				", paraNum=" + paraNum +
+				'}';
+	}
 }

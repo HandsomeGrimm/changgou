@@ -64,5 +64,13 @@ public class Album implements Serializable{
 		this.imageItems = imageItems;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Album{" +
+				"id=" + id +
+				", title='" + title + '\'' +
+				", image='" + image + '\'' +
+				", imageItems='" + imageItems + '\'' +
+				'}';
+	}
 }

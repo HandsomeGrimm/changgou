@@ -28,8 +28,6 @@ public class Para implements Serializable{
     @Column(name = "template_id")
 	private Integer templateId;//模板ID
 
-
-
 	//get方法
 	public Integer getId() {
 		return id;
@@ -76,5 +74,14 @@ public class Para implements Serializable{
 		this.templateId = templateId;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Para{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", options='" + options + '\'' +
+				", seq=" + seq +
+				", templateId=" + templateId +
+				'}';
+	}
 }

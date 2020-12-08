@@ -28,8 +28,6 @@ public class Spec implements Serializable{
     @Column(name = "template_id")
 	private Integer templateId;//模板ID
 
-
-
 	//get方法
 	public Integer getId() {
 		return id;
@@ -76,5 +74,14 @@ public class Spec implements Serializable{
 		this.templateId = templateId;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Spec{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", options='" + options + '\'' +
+				", seq=" + seq +
+				", templateId=" + templateId +
+				'}';
+	}
 }
