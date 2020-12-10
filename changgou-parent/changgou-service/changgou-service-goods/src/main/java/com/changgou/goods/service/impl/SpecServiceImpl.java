@@ -1,7 +1,9 @@
 package com.changgou.goods.service.impl;
 
+import com.changgou.goods.dao.CategoryMapper;
 import com.changgou.goods.dao.SpecMapper;
 import com.changgou.goods.dao.TemplateMapper;
+import com.changgou.goods.goods.pojo.Category;
 import com.changgou.goods.goods.pojo.Spec;
 import com.changgou.goods.goods.pojo.Template;
 import com.changgou.goods.service.SpecService;
@@ -21,6 +23,9 @@ public class SpecServiceImpl implements SpecService {
 
     @Autowired
     private TemplateMapper templateMapper;
+
+    @Autowired
+    private CategoryMapper categoryMapper;
 
     /**
      * Spec条件+分页查询
@@ -154,6 +159,20 @@ public class SpecServiceImpl implements SpecService {
         return specMapper.selectAll();
     }
 
+    /**
+    *   @author: zhangy
+    *   @Date: 2020/12/10 9:41
+    *   @description: 根据分类ID查询规格列表
+    */
+    @Override
+    public List<Spec> findByCategoryId(Integer categoryid) {
+        //查询分类
+        Category category = categoryMapper.selectByPrimaryKey(categoryid);
+        //根据分类的模板ID查询规格
+        Spec spec = new Spec();
+        spec.setTemplateId(category.getTemplateId());
+        return specMapper.select(spec);
+    }
 
     /**
      * 修改模板统计数据

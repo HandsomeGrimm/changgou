@@ -63,6 +63,20 @@ public class BrandServiceImpl implements BrandService {
         return new PageInfo<>(brandMapper.selectByExample(example));
     }
 
+    /**
+    *   @author: zhangy
+    *   @Date: 2020/12/10 9:37
+    *   @description: 根据分类ID查询品牌集合
+    */
+    @Override
+    public List<Brand> findByCategory(Integer categoryid) {
+        //1.查询当前分类所对应的所有品牌信息
+        //2.根据品牌ID查询对应的品牌集合
+
+        //自己创建DAO实现查询
+        return brandMapper.findByCategory(categoryid);
+    }
+
     public Example createExample(Brand brand){
         Example example=new Example(Brand.class);
         Example.Criteria criteria=example.createCriteria();
