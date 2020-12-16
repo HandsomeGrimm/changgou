@@ -14,9 +14,6 @@
     <description>
         网关的相关模块的父工程
     </description>
-    <modules>
-        <module>changgou-gateway-web</module>
-    </modules>
 
     <dependencies>
         <dependency>
